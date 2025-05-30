@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* Remove number input arrows in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+/* Remove number input arrows in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield !important;
+}
+
+/* UNIVERSAL STYLING FOR ALL SELECT ELEMENTS */
+select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-color: transparent;
+    padding-right: 2rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='purple' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.65rem auto;
+    cursor: pointer;
+}
+
+select:disabled {
+    background-color: #f3f3f3;
+    color: #999;
+    border-color: #d1d5db; /* Light gray border */
+    cursor: not-allowed;
+}
+
+/* Reset and base custom checkbox style */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #a855f7; /* Tailwind purple-500 */
+    border-radius: 0.25rem;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked {
+    background-color: #a855f7;
+    border-color: #9333ea; /* darker purple for contrast */
+    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
+    transform: scale(1.05);
+}
+
+/* Bolder white checkmark */
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: all 0.2s ease-in-out;
+}
+/* Base styling for radio buttons */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #a855f7; /* Purple border */
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+/* Checked state with a filled purple dot */
+input[type="radio"]:checked {
+    border-color: #9333ea;
+    box-shadow: 0 0 4px rgba(168, 85, 247, 0.4);
+}
+
+/* Inner dot effect */
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #a855f7;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 576px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
